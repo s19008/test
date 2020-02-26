@@ -38,8 +38,8 @@ export default class App extends Component {
 
   render () {
     return (
-      <div>
-        <header title='ステータスコード猫' />
+      <h1>ステータスコードの猫たち</h1>
+        <div>
         <Button
           onClick={() => this.URL_cat100()}
           variant='contained'
@@ -79,9 +79,9 @@ export default class App extends Component {
         >
           cat 599
         </Button>
-
+   
         <img src={this.state.cat_url}></img>
-      </div>
+        </div>
     )
   }
 }
