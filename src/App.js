@@ -38,8 +38,10 @@ export default class App extends Component {
 
   render () {
     return (
+      <div className='title'>
       <h1>ステータスコードの猫たち</h1>
-        <div>
+      </div>
+      <div>
         <Button
           onClick={() => this.URL_cat100()}
           variant='contained'
