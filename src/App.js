@@ -39,9 +39,7 @@ export default class App extends Component {
   render () {
     return (
       <div>
-        <title>ステータスコード猫</title>
-      </div>
-       <div class='button'>
+        <header title='ステータスコード猫' />
         <Button
           onClick={() => this.URL_cat100()}
           variant='contained'
