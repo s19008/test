@@ -10,6 +10,7 @@ export default class App extends Component {
       c_200: '200.jpg',
       c_403: '403.jpg',
       c_404: '404.jpg',
+      c_405: '405.jpg',
       c_599: '599.jpg',
       cat: 'https://http.cat/',
       cat_url: null
@@ -32,15 +33,16 @@ export default class App extends Component {
     this.setState({ cat_url: this.state.cat + this.state.c_404 })
   }
 
+  URL_cat405 () {
+    this.setState({ cat_url: this.state.cat + this.state.c_405 })
+  }
+
   URL_cat599 () {
     this.setState({ cat_url: this.state.cat + this.state.c_599 })
   }
 
   render () {
     return (
-      <div className='title'>
-      <h1>ステータスコードの猫たち</h1>
-      </div>
       <div>
         <Button
           onClick={() => this.URL_cat100()}
@@ -75,15 +77,23 @@ export default class App extends Component {
         </Button>
 
         <Button
+          onClick={() => this.URL_cat405()}
+          variant='contained'
+          color='primary'
+        >
+          cat 405
+        </Button>
+
+        <Button
           onClick={() => this.URL_cat599()}
           variant='contained'
           color='primary'
         >
           cat 599
         </Button>
-   
+
         <img src={this.state.cat_url}></img>
-        </div>
+      </div>
     )
   }
 }
