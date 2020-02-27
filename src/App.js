@@ -13,8 +13,15 @@ export default class App extends Component {
       c_405: '405.jpg',
       c_599: '599.jpg',
       cat: 'https://http.cat/',
-      cat_url: null
+      cat_url: null,
+      value: ''
     }
+    this.handleChange = this.gendleChange.bind(this)
+    this.handleSubmit = this.gandleSubmit.bind(this)
+  }
+
+  handleChange (event) {
+    this.setState({ value: event.target.value })
   }
 
   URL_cat100 () {
@@ -43,6 +50,13 @@ export default class App extends Component {
 
   render () {
     return (
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          Code:
+          <input type="text" value={this.state.value} onChange={this.handleChange} />
+        </label>
+        <input type="submit" value="Submit" />
+      </form>
       <div>
         <Button
           onClick={() => this.URL_cat100()}
@@ -91,7 +105,6 @@ export default class App extends Component {
         >
           cat 599
         </Button>
-
         <img src={this.state.cat_url}></img>
       </div>
     )
